@@ -21,4 +21,22 @@ I setup a new Cloud9 environment and configured a c1.medium instance, reviewed e
 
 ![image](https://user-images.githubusercontent.com/106786020/215304081-12692c6a-f4ab-48b1-ac77-c3905e687b0e.png)
 
-Then I started downloading the supporting code, for this project I used Python scripts to interact with the DynamoDB API. I ran the following command in my terminal to download and unpack the code (download and unpack file)
+Then I started downloading the supporting code, for this project I used Python scripts to interact with the DynamoDB API. I ran the following command in my terminal to download and unpack the code (download and unpack file). After running the commands I instantly took notice of the two directories in the AWS Cloud9 file explorer.
+
+- application: The application directory contains example code for reading and writing data in your table. This code is similar to code you would have in your real game.
+
+- scripts: The scripts directory contains administrator-level scripts, such as for creating a table, adding a secondary index, or deleting a table.
+
+I really liked this little detail, because it really helps avoid any confusion and saves alot of time.
+
+## Planning the Data Model
+To start things off I began building my entity-relationship diagram. In my application I have 3 entities:
+
+User - User entity represents a user in the application. A user can create multiple Game entities, and the creator of a game will determine which map is played and when the game starts. A User can create multiple Game entities, so there is a one-to-many relationship between Users and Games.
+
+Game - Game contains multiple Users and a User can play in multiple different Games over time. Thus, there is a many-to-many relationship between Users and Games.
+
+UserGameMapping - represents the relationship between the user and the game.
+
+![image](https://user-images.githubusercontent.com/106786020/215307266-e18af3da-a209-4ee1-b8aa-a082e7f63413.png)
+
