@@ -1,0 +1,2 @@
+cd ~/environment
+curl -sL https://s3.amazonaws.com/ddb-labs/battle-royale.tar | tar -xv
