@@ -21,4 +21,4 @@ I setup a new Cloud9 environment and configured a c1.medium instance, reviewed e
 
 ![image](https://user-images.githubusercontent.com/106786020/215304081-12692c6a-f4ab-48b1-ac77-c3905e687b0e.png)
 
-
+Then I started downloading the supporting code, for this project I used Python scripts to interact with the DynamoDB API. I ran the following command in my terminal to download and unpack the code (download and unpack file)
