@@ -10,3 +10,15 @@ I started by setting up my AWS Cloud9 IDE "AWS Cloud9 is a cloud-based integrate
 
 ![image](https://user-images.githubusercontent.com/106786020/215303773-c95555be-0532-4f59-8fcf-c2453e8e18f7.png)
 
+I setup a new Cloud9 environment and configured a c1.medium instance, reviewed everything and created the environment. Cloud9 has three main areas that you need to be familiar with dealing with this kind of project.
+
+- File explorer: On the left side of the IDE, the file explorer shows a list of the files in your directory.
+
+- File editor: On the upper right area of the IDE, the file editor is where you view and edit files that you’ve selected in the file explorer.
+
+- Terminal: On the lower right area of the IDE, this is where you run commands to execute code samples.
+
+
+![image](https://user-images.githubusercontent.com/106786020/215304081-12692c6a-f4ab-48b1-ac77-c3905e687b0e.png)
+
+
