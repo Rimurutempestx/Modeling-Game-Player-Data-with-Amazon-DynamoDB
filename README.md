@@ -72,8 +72,11 @@ The other two data entities—User and Game—don’t have a natural property fo
 
 
 Entity	              HASH	                 RANGE
-User            	USER#<USERNAME>  	   #METADATA#<USERNAME>
+
+User              USER#<USERNAME>  	   #METADATA#<USERNAME>
+
 Game	             GAME#<GAME_ID>	     #METADATA#<GAME_ID>
+
 UserGameMapping	   GAME#<GAME_ID>	      USER#<USERNAME>
 
 
