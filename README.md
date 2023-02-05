@@ -64,6 +64,17 @@ Finally we had to consider the in-game and post-game access patterns. During the
 - Find all past games for a user (Read)
 
 
+## Core Usage: User Profiles and Games
+
+I started off by designing the primary key, first we have to look at some of our previous entities. User, Game, UserGameMapping A UserGameMapping is a record that indicates a user joined a game. There is a many-to-many relationship between User and Game. Since my data model has multiple entities with relationships among them, I would generally use a composite primary key with both HASH and RANGE values. The composite primary key gives me the Query ability on the HASH key to satisfy one of the query patterns we need. In the DynamoDB documentation, the partition key is called HASH and the sort key is called RANGE, and in this we use the API terminology interchangeably and especially when we discuss the code or DynamoDB JSON wire protocol format.
+
+The other two data entities—User and Game—don’t have a natural property for the RANGE value because the access patterns on a User or Game are a key-value lookup. Because a RANGE value is required, we can provide a filler value for the RANGE key. With this in mind I used the following pattern for HASH and RANGE values for each entity type.
+
+
+Entity	              HASH	                 RANGE
+User            	USER#<USERNAME>  	   #METADATA#<USERNAME>
+Game	             GAME#<GAME_ID>	     #METADATA#<GAME_ID>
+UserGameMapping	   GAME#<GAME_ID>	      USER#<USERNAME>
 
 
 
