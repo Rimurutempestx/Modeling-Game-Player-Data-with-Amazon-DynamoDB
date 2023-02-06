@@ -83,6 +83,6 @@ For the User entity, the HASH value is USER#<USERNAME>. For the RANGE value on t
 
 Next it was time to create a table I deployed the following Python script (create_table file). After this I declared the names and types of attributes that are used for primary keys, because I'm storing different entities in a single table, I can’t use primary key attribute names such as UserId. The attribute means something different based on the type of entity being stored. For example, the primary key for a user might be its USERNAME, and the primary key for a game might be its GAMEID. Accordingly, we use generic names for the attributes, such as PK (for partition key) and SK (for sort key). After configuring the attributes in the key schema, I specified the provisioned throughput for the table. DynamoDB has two capacity modes: provisioned and on-demand. In provisioned capacity mode, you specify exactly the amount of read and write throughput you want. You pay for this capacity whether you use it or not. In DynamoDB on-demand capacity mode, you can pay per request. The cost per request is slightly higher than if you were to use provisioned throughput fully, but you don’t have to spend time doing capacity planning or worrying about getting throttled. On-demand mode works great for spiky or unpredictable workloads. I decided to go with provisioned capacity. Then I ran the following Python script to create the table (table create command file).
 
-
+Now it was time to Bulk-lad data into the table. 
 
 
