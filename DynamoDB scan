@@ -1,0 +1,3 @@
+aws dynamodb scan \
+ --table-name battle-royale \
+ --select COUNT
