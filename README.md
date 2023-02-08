@@ -85,4 +85,4 @@ Next it was time to create a table I deployed the following Python script (creat
 
 Now it was time to Bulk-load data into the DynamoDB table. I pulled some randomly generated items from a file that include User, Game, and UserGameMapping entities. I then ran a file called bulk_load_table.py (bulk_load_table.py file) that reads the items in the items.json file and bulk-writes them to the DynamoDB table. In this script we use a higher-level Resource object. Resource objects provide an easier interface for using the AWS APIs, in this situation the resource object batches our requests.  The BatchWriteItem operation accepts as many as 25 items in a single request. The Resource object handles that batching for me rather than making us divide our data into requests of 25 or fewer items. After running the bulk_load_table.py script I loaded the table with data by running the following command (Python scripts file). I then ensured that all the data was loaded into the table by running a scan operation and getting the count. (dyanmodb scan file).
 
-
+Now I had to retrieve 
