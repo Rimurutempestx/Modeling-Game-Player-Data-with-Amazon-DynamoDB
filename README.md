@@ -120,4 +120,4 @@ The way to handle each of these checks is to use a condition expression in a req
 - Remove the open_timestamp attribute so that it does not appear as an open game in the sparse secondary index from the previous module.
 - Add a start_time attribute to indicate when the game started. To ensure all of these changes were met I set up the following script (start game file), It takes a game_id, requesting_user, and start_time, and it runs a request to update the Game entity to start the game. After i ran the script with the following command (start.game.py file).
 
-
+Next it was time to add an inverted index, I set up the following script to add it (add.inverted.index file)
