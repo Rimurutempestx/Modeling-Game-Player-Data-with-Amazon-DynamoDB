@@ -109,3 +109,15 @@ After setting up the query() and scan() commands it was now time to add users to
 
 I then setup the following script, the function in this script uses a DynamoDB transaction to add a user to a game(join.game file). I then ran the script with the following command (join.game.py.file).
 
+Since the configuration for a user to join the game had been taking care of it was time to make sure there was an action to allow the game to start. As soon as a game has 50 players the game can start. When the application backened recieves a request to start the game we check three things:
+
+- The game has 50 people signed up.
+- The requesting user is the creator of the game.
+- The game has not already started.
+
+The way to handle each of these checks is to use a condition expression in a request to update the game, when all the checks pass we need to update the entity in the following ways:
+
+- Remove the open_timestamp attribute so that it does not appear as an open game in the sparse secondary index from the previous module.
+- Add a start_time attribute to indicate when the game started. To ensure all of these changes were met I set up the following script (start game file), It takes a game_id, requesting_user, and start_time, and it runs a request to update the Game entity to start the game.
+
+
