@@ -107,5 +107,5 @@ After setting up the query() and scan() commands it was now time to add users to
 
 "Note that accomplishing all of these things requires write actions across the existing Game entity and the new UserGameMapping entity as well as conditional logic for each of the entities. This is the kind of operation that is a perfect fit for DynamoDB transactions because you need to work on multiple entities in the same request, and you want the entire request to succeed or fail together."
 
-I then setup the following script, the function in this script uses a DynamoDB transaction to add a user to a game(join.game file).
+I then setup the following script, the function in this script uses a DynamoDB transaction to add a user to a game(join.game file). I then ran the script with the following command (join.game.py.file).
 
