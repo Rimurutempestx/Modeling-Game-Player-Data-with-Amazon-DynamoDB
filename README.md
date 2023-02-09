@@ -122,7 +122,9 @@ The way to handle each of these checks is to use a condition expression in a req
 
 Next it was time to add an inverted index, I set up the following script to add it (add.inverted.index file). I then ran the script with the following command (add.inverted.index.py file) and everything worked out well on that end.
 
-Now that the inverted index was created it was time to retrieve games for the user. To handle this, we need to query the inverted index with the User whose Game entities we want to see. To do that I set up the following script (find.games.for.user file).
+Now that the inverted index was created it was time to retrieve games for the user. To handle this, we need to query the inverted index with the User whose Game entities we want to see. To do that I set up the following script (find.games.for.user file). This function takes a user name and returns all the games played by the given user. I then ran the script with the following command (find.game.for.user.py)
+
+
 
 
 
