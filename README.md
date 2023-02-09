@@ -121,3 +121,8 @@ The way to handle each of these checks is to use a condition expression in a req
 - Add a start_time attribute to indicate when the game started. To ensure all of these changes were met I set up the following script (start game file), It takes a game_id, requesting_user, and start_time, and it runs a request to update the Game entity to start the game. After i ran the script with the following command (start.game.py file).
 
 Next it was time to add an inverted index, I set up the following script to add it (add.inverted.index file). I then ran the script with the following command (add.inverted.index.py file) and everything worked out well on that end.
+
+Now that the inverted index was created it was time to retrieve games for the user. To handle this, we need to query the inverted index with the User whose Game entities we want to see. To do that I set up the following script (find.games.for.user file).
+
+
+
