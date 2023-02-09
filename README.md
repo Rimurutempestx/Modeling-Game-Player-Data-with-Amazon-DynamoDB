@@ -125,6 +125,8 @@ Next it was time to add an inverted index, I set up the following script to add 
 Now that the inverted index was created it was time to retrieve games for the user. To handle this, we need to query the inverted index with the User whose Game entities we want to see. To do that I set up the following script (find.games.for.user file). This function takes a user name and returns all the games played by the given user. I then ran the script with the following command (find.game.for.user.py)
 
 
+## Conclusion
 
+After ironing out the last few parts of the application everything ending up running smoothly. I had alot of fun building this because there is a good bit of things that you can customize your own way. I also learned a few things that I didn't know about DynamoDB prior to doing this project. It's always nice to polish your skills and brush up on new topics, especially when there beneficial to your skill set. Being able to see the infrastructure of how most games work is also a plus, due to the fact that it will have your mind thinking about how the game could be working the next time you load one up. That being said other than a few bugs I ran into after fixing evrything and watching it all come together it definitely was more fun than I expected.
 
 
