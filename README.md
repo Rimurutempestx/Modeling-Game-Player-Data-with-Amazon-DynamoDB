@@ -99,4 +99,12 @@ Now it was time to query the sparse secondary index, I used the Query API agains
 
 Now that we set up everything so the user can find a game for a specific map, other users may be willing to play on any map. So I started setting up the scan for the sparse secondary index for the players that are willing to play in any open game regardless of the map. In general, you do not want to design your table to use the DynamoDB Scan operation because DynamoDB is built for surgical queries that grab the exact entities you need. A Scan operation grabs a random collection of entities across your table, so finding the entities you need can require multiple round trips to the database. However, sometimes Scan can be useful. In this situation, I have a sparse secondary index, meaning that the index shouldn’t have that many entities in it. In addition, the index includes only those games that are open, and that is exactly what I need. I then ran the following code (find open game (random map) file). The diffrence between this action and what I did before was instead of running the query() method on the DynamoDB client, I used the scan method instead. I then ran the following script with the following command (find open game (random map) command file)
 
+After setting up the query() and scan() commands it was now time to add users to a game. When adding users to the game we need to do the following: 
+- Confirm that there are not already 50 players in the game (each game can have a maximum of 50 players).
+- Confirm that the user is not already in the game.
+- Create a new UserGameMapping entity to add the user to the game.
+- Increment the people attribute on the Game entity to track how many players are in the game.
+
+"Note that accomplishing all of these things requires write actions across the existing Game entity and the new UserGameMapping entity as well as conditional logic for each of the entities. This is the kind of operation that is a perfect fit for DynamoDB transactions because you need to work on multiple entities in the same request, and you want the entire request to succeed or fail together."
+
 
